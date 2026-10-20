@@ -86,7 +86,6 @@ Paid add-ons. Set them only when the user asks:
 - `aiAnalysis: true` (+ up to 20 `aiQuestions`), `aiVideoSummary`, `aiVideoDescription`.
 - `shouldDownloadVideos: true` (watermark-free MP4). Covers, slideshow images, avatars and sound covers are free.
 
-Region: `proxyCountryCode` (for example `"GB"`) shows the search and hashtag results that people in that country see. Free.
 
 ### Step 2 — Build the input
 
@@ -153,7 +152,7 @@ Every row has `dataType`:
 | `comment` | `cid`, `text`, `createTimeISO`, `diggCount`, `replyCommentTotal`, `repliesToId` (the parent `cid`; rebuild threads with it), `videoWebUrl`, `uniqueId` (the commenter) |
 | `profile` | `input`, `authorMeta` |
 | `follower` | `authorMeta` (the account), `connectedTo`, `connectionType` (`follower` or `following`) |
-| `failed` | `errorCode` (`profile_not_found`, `hashtag_not_found`, `music_not_found`, `video_unavailable`, `blocked`), `error`, `input` |
+| `failed` | `error`, `input` |
 
 Check `failed` rows first and tell the user which inputs did not work. Then report counts by `dataType`, the input, whether `resultsPerPage` or a filter cut the set, and a short table of top videos by `playCount` or `diggCount` with `webVideoUrl` links. For engagement, compute `diggCount / playCount` yourself.
 
@@ -186,8 +185,8 @@ See <https://github.com/apify/mcpc>.
 ## Troubleshooting
 
 - **Only 1 video per profile or hashtag** → `resultsPerPage` was not set. Its default is 1.
-- **`failed` row with `profile_not_found`** → the account does not exist, changed its name or is banned. With `video_unavailable`, TikTok removed or hides the video. Failed rows cost nothing.
-- **Fewer videos than asked** → TikTok shows logged-out visitors a limited number per profile, tag and keyword, and filters drop the rest. Split a broad topic into narrower keywords or tags.
+- **Failed row** → check the requested account or video link and report the message to the user. Failed rows cost nothing.
+- **Fewer videos than asked** → some feeds return fewer rows than requested, or the selected filters reduce the result count. Try narrower keywords or tags.
 - **No `aiAnalysis` on rows** → the account is on the Apify free plan. AI options need a paid plan.
 - **Unexpected profile charges** → each entry in `profiles`, and each account from `"/user"` search, adds one `profile` row at $0.004.
 - More detail: [references/gotchas.md](references/gotchas.md).

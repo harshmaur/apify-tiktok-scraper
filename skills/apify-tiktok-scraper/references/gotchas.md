@@ -5,7 +5,7 @@
 - `resultsPerPage` applies to each profile, hashtag, keyword and sound separately. 3 hashtags × `resultsPerPage: 100` is up to 300 videos.
 - `maxItems` caps all rows of the run together: videos, comments, profiles and followers. With comments on, a low `maxItems` can stop the run before every target has its videos.
 - The free Apify plan searches at most 40 keywords per run.
-- TikTok gives logged-out visitors a limited depth per feed. A very large `resultsPerPage` on one hashtag can stop short.
+- Some feeds return fewer rows than requested, even when `resultsPerPage` is large.
 
 ## Cost examples
 
