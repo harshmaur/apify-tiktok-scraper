@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tiktok-scraper": {
+      "type": "http",
+      "url": "https://mcp.apify.com/?tools=harshmaur/tiktok-scraper"
+    }
+  }
+}

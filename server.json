@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.harshmaur/tiktok-scraper",
+  "title": "TikTok Scraper (Apify) – videos, profiles, comments, transcripts",
+  "description": "TikTok videos, profiles, hashtags, search, comments and followers as JSON. No login. $0.35/1k videos",
+  "version": "1.0.0",
+  "websiteUrl": "https://apify.com/harshmaur/tiktok-scraper",
+  "repository": {
+    "url": "https://github.com/harshmaur/apify-tiktok-scraper",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.apify.com/?tools=harshmaur/tiktok-scraper",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Apify API token as 'Bearer <APIFY_TOKEN>'. Free token at https://console.apify.com/account/integrations",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}

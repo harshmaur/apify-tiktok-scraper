@@ -1,0 +1,16 @@
+{
+  "name": "apify-tiktok-scraper",
+  "description": "TikTok Scraper skill and hosted Apify MCP tool for Claude Code: creators, hashtags, search, comments and followers as JSON.",
+  "owner": {
+    "name": "Harsh Maur",
+    "url": "https://github.com/harshmaur"
+  },
+  "plugins": [
+    {
+      "name": "apify-tiktok-scraper",
+      "source": "./",
+      "description": "Collect TikTok videos with views, likes and shares, plus comments, followers, captions and AI brand-safety labels. No TikTok account needed.",
+      "category": "data"
+    }
+  ]
+}

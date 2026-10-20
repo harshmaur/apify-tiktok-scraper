@@ -1,0 +1,10 @@
+{
+  "name": "apify-tiktok-scraper",
+  "version": "1.0.0",
+  "description": "Read public TikTok profiles, hashtags, search results, comments and followers with the TikTok Scraper Apify Actor, with free date and likes filters and optional transcripts and AI labels. No TikTok login.",
+  "author": { "name": "Harsh Maur", "url": "https://github.com/harshmaur" },
+  "homepage": "https://apify.com/harshmaur/tiktok-scraper",
+  "repository": "https://github.com/harshmaur/apify-tiktok-scraper",
+  "license": "MIT",
+  "keywords": ["tiktok", "tiktok-scraper", "influencer-research", "social-media", "transcripts", "apify", "mcp"]
+}
